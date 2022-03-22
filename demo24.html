@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标样式</title>
+    <style>
+        .ip {
+            /* 取消文本框加粗 */
+            outline: none;
+        }
+        .wenben {
+            /* 文本框不会被拉大 */
+            resize: none;
+        }
+        .shenglue {
+            width: 150px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px auto;
+            /* 强制一行文本 */
+            white-space: nowrap;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文字用省略号替代超出的部分 */
+            text-overflow: ellipsis;
+        }
+        .shenglue1 {
+            width: 150px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型显示 */
+            display: -webkit-box;
+            /* 限制在一个块元素显示的文本的行数 */
+            -webkit-line-clamp: 2;
+            /* 设置或检索伸缩对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="cursor: default;">我是默认小白鼠标样式</li>
+        <li style="cursor: pointer;">我是鼠标小手样式</li>
+        <li style="cursor: move;">我是鼠标移动样式</li>
+        <li style="cursor: text;">我是鼠标文本样式</li>
+        <li style="cursor: not-allowed;">我是鼠标禁止样式</li>
+    </ul>
+    <!-- 当点击的时候文本框会加粗 -->
+    <input type="text" class="ip">
+    <textarea name="" id="" cols="30" rows="10" class="wenben"></textarea>
+    <div class="shenglue">哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    <div class="shenglue1">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+</body>
+</html>

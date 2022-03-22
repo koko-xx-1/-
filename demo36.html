@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            float: left;
+            list-style: none;
+            margin-left: 20px;
+        }
+        .box {
+            position: relative;
+            width: 100px;
+            height: 50px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            perspective: 2500px;
+            transition: all .2s;
+
+        }
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+        .front,.bottom {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            line-height: 50px;
+            text-align: center;
+        }
+        .front {
+            background-color: royalblue;
+            z-index: 1;
+            backface-visibility: hidden;
+            transform: translateZ(25px);
+        }
+        .bottom {
+            backface-visibility: hidden;
+            background-color: slateblue;
+            transform: translateY(25px) rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li> 
+            <div class="box">
+                <div class="front">koko</div>
+                <div class="bottom">coco</div>
+            </div>
+        </li>
+        <li> 
+            <div class="box">
+                <div class="front">koko</div>
+                <div class="bottom">coco</div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

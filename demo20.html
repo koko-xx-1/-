@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝焦点图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .tb-promo {
+            position: relative;
+            margin: 100px auto;
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            border-radius: 15px;
+        }
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+        .tb-promo .prew {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0,0,0,0.5);
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .tb-promo .next {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0,0,0,0.5);
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .tb-promo .nav {
+            position: absolute;
+            width: 70px;
+            height: 13px;
+            left: 50%;
+            margin-left: -35px;
+            bottom: 15px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 0;
+            background-color: rgba(255,255,255,0.3);
+
+
+        }
+        .tb-promo .nav li {
+            float: left;
+            list-style: none;
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: palevioletred;
+        }
+        .tb-promo .nav .selected {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="tb-promo">
+        <img src="img/tb1.jpg">
+        <a href="#" class="prew">&lt;</a>
+        <a href="#" class="next">&gt;</a>
+        <ul class="nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+</html>

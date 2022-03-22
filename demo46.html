@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格系统</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 如果孩子的份数相加为12 则会占满整个container的宽度 -->
+        <!-- 如果孩子的分数相加小于12 则铺不满container的宽度 -->
+        <!-- 如果孩子的分数相加大于12 则多余的一列换行显示 -->
+        <div class="row">
+            <div class="col-lg-3">1</div>
+            <div class="col-lg-3">2</div>
+            <div class="col-lg-3">3</div>
+            <div class="col-lg-3">4</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">1</div>
+            <div class="col-lg-3">2</div>
+            <div class="col-lg-3">3</div>
+            <div class="col-lg-3">4</div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

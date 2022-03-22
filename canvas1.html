@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="background: gray;"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        var cx=150,cy=250;
+        var r =50;
+
+        var rx=c.width/2 -50;//挡板坐标
+        var ry=c.height/2 + 110;
+
+        var flag = 0;//0 向右移，1 向左移
+        var vflag = 0;//0 向上移，1 向下移
+
+        var score = 0;
+
+        var t = setInterval(logic,20);//时间进程
+
+        function logic()
+        {
+            // 按照逻辑改变坐标
+            if(flag == 0)
+                cx++;
+            else
+                cx--;
+
+            if(cx+r>c.width)
+                flag=1;
+
+            if(cx-r<0)
+                flag=0;
+
+            // y方向
+            if(vflag == 0)
+                cy--;
+            else
+                cy++;
+
+            if(cy+r>c.height)
+                vflag=0;
+
+            if(cy-r<0)
+                vflag=1;
+
+            //判断有无碰到球
+            if(cy + r > ry - 2 &&cy + r < ry + 2 &&cx>rx &&cx < rx + 100)
+            {
+                vflag=0;//球弹回去
+                score += 1;
+            }
+            //判断失败
+            if(cy + r > c.height)
+                {
+                    cx=150;
+                    cy=150;
+                    rx = rx=c.width/2 -50;
+                    flag = 0;
+                    vflag = 0;
+                    score = 0;
+                
+                            
+                    ctx.fillStyle="black";
+                    ctx.font="100px 黑体";
+                    ctx.fillText("游戏失败",0.5 * c.width-170, 0.5 * c.height);
+
+                    ctx.fillStyle="black";
+                    ctx.font="100px 黑体";
+                    ctx.fillText("重新开始",0.5 * c.width-170, 0.5 * c.height + 100);
+
+
+                    clearInterval(t);    
+                    return;
+                }
+
+            // 重绘界面
+            draw();
+
+        }
+
+        function draw()
+        {
+            ctx.fillStyle="gray";
+            ctx.fillRect(0,0,c.width,c.height);//背景
+
+            ctx.fillStyle="rgb(200,200,255)";
+            ctx.font = "30px,黑体";
+            ctx.fillText("得分："+ score,20,20);
+
+
+            ctx.beginPath();
+            ctx.strokeStyle="red";
+            ctx.arc(cx,cy,r,0,2*Math.PI);
+            ctx.stroke();
+            
+            ctx.fillStyle="blue";
+            ctx.fillRect(rx,ry,100,20)
+
+        }
+
+        c.onclick = function(e)//点击事件
+        {
+            if(e.x<c.width/2)
+                rx-=10;
+            else
+                rx+=10;
+            
+            if(e.x<0.5 * c.width-170 &&e.x>0.5 * c.width+170&&e.y<0.5 * c.height + 100&&e.y > 0.5 * c.height - 100)
+            {
+                t = setInterval(logic,20);
+            }
+
+        }
+    </script>
+</body>
+</html>

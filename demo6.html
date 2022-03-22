@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>并集选择器</title>
+    <style>
+        div .xiong,
+        p,
+        ul li {
+            color: red;
+        }
+        .diyi>a:link {
+            color: red;
+            text-decoration: none;
+        }
+        .dier>a:visited{
+            color: seagreen;
+        }
+        .disan>a:hover{
+            color: yellow;
+        }
+        .disi>a:active{
+            color: violet;
+        }
+        input:focus {
+            background-color: pink;
+        }
+        .kuai {
+            display: block;
+            width: 500px;
+            height: 500px;
+            background-color: chartreuse;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="xiong">熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪妈妈</li>
+        <li>猪爸爸</li>
+    </ul>
+    <div class="diyi"><a href="#">link 未访问过的链接选出来</a></div>
+    <div class="dier"><a href="#">visited 已经访问过的链接选出来</a></div>
+    <div class="disan"><a href="#">hover 鼠标经过的链接选出来</a></div>
+    <div class="disi"><a href="#">active 鼠标按下不动的链接选出来</a></div>
+    <input type="text">
+    <div>块元素独占一行<br>
+    可以设置高度,宽度,内外边距<br>
+    宽度默认是容器的100%<br>
+    是一个容器及盒子，里面可以放行或者块级元素<br>
+    p标签不能放块元素<br>
+    h1-h6也不能放其他块元素<br>
+    a里面可以放块级元素
+    </div>
+    <a href="#" class="kuai">转换为块级元素</a>
+</body>
+</html>

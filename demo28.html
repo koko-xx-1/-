@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转中心案例</title>
+    <style>
+        div {
+            overflow: hidden;
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            margin: 100px auto;
+
+        }
+        div::before{
+
+            content: "heima";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: all .5s;
+
+        }
+        div:hover::before {
+            transform:rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
